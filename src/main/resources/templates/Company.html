@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Companie</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">E-store</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+
+        <a class="p-2 text-dark" href="/Company.html">Companie</a>
+        <a class="p-2 text-dark" href="/Support.html">Suport</a>
+        <a class="p-2 text-dark" href="/shoppingCart"> Cos
+            <span th:text="${shoppingCartSize}"></span>
+        </a>
+    </nav>
+    <a class="btn btn-outline-primary" href="/logout">Log out</a>
+</div>
+
+<div class="shop-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" style="max-width: 700px;">
+    <h1 class="display-4">Companie</h1>
+    <p class="lead">Informatii / date</p>
+    <h2>E-store este o companie din România, deținută de Stefan, care se ocupă cu vânzarea online de echipamente și componente IT, electronice, electrocasnice etc.</h2>
+</div>
+<h3>
+    <a href="/dashboard"><input type="button" value="Go back!" onclick="history.back()"></a>
+</h3>
+</body>
+</html>

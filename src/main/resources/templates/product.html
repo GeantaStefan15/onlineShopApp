@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="product.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"  >E-store</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/Company.html">Companie</a>
+        <a class="p-2 text-dark" href="/Support.html">Suport</a>
+        <a class="p-2 text-dark" href="/shoppingCart"> Cos
+            <span th:text="${shoppingCartSize}"></span>
+
+        </a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Log out</a>
+</div>
+
+<div class="shop-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" style="max-width: 700px;">
+    <h1 class="display-4">Detalii Produs</h1>
+    <p class="lead">Specificatii</p>
+</div>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Model</th>
+        <th scope="col">Memorie</th>
+        <th scope="col">Culoare</th>
+        <th scope="col">Descriere</th>
+        <th scope="col">Stoc</th>
+        <th scope="col">Pret Lei</th>
+        <th scope="col">image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:object="${p}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.categorie.nume}"></td>
+        <td th:text="${p.brand}"></td>
+        <td th:text="${p.nume}"></td>
+        <td th:text="${p.memorie}"></td>
+        <td th:text="${p.culoare}"></td>
+        <td th:text="${p.descriere}"></td>
+        <td th:text="${p.cantitate}"></td>
+        <td th:text="${p.pret}"></td>
+       <td> <img th:src="@{${p.image}}"></td>
+
+    </tr>
+    <tr th:object="${p}">
+    <th scope="col">#Specificatii</th>
+    <td th:text="${p.specificatii}"></td>
+    </tbody>
+    </tr>
+</table>
+<a href="/dashboard"><input type="button" value="Go back!" onclick="history.back()"></a>
+</body>
+</html>
